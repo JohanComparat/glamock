@@ -5,7 +5,7 @@ from os.path import join
 def runPMP(LBOX = "650.000", NROW = "1612", NGRID = "1612", DTHR = "120.000", NORM = "0.0001", nrm= "N1em4", SLOPE= "-1.000", slp = "am100", DMAX = "240.000", RR=1, start=0):
 	# create outdir
 	
-	os.chdir(os.environ['ARTMOCK_DIR'])
+	os.chdir(os.environ['GLAMOCK_DIR'])
 	os.remove("Init.dat")
 
 	f=open("Init.dat", 'w')
@@ -41,18 +41,18 @@ def runPMP(LBOX = "650.000", NROW = "1612", NGRID = "1612", DTHR = "120.000", NO
 	os.system("./PMP2init.exe")
 	
 	dirName = "PM_Nr"+NROW+"_L"+LBOX+"_g"+NGRID+"_Dgt"+DTHR[:4]+"_"+slp+"_Dlt"+DMAX[:4] +"_"+nrm
-	outdir = join(os.environ['ARTMOCK_DIR'], dirName)
+	outdir = join(os.environ['GLAMOCK_DIR'], dirName)
 	os.mkdir(outdir)
 	os.chdir(outdir)
 	
 	for ii in range(start, start+RR, 1):
 		os.system("touch begin"+str(ii) )
-		os.system("echo " + str(ii) + " | " + join( os.environ['ARTMOCK_DIR'], "PMP2start.exe") )
-		os.system("echo 1000000 | " + join( os.environ['ARTMOCK_DIR'], "PMP2main.exe") )
+		os.system("echo " + str(ii) + " | " + join( os.environ['GLAMOCK_DIR'], "PMP2start.exe") )
+		os.system("echo 1000000 | " + join( os.environ['GLAMOCK_DIR'], "PMP2main.exe") )
 		os.system("rm -rf PMcr*.DAT" )
 	
 	return dirName
 
 dirName = runPMP(LBOX="1000.000", NROW="2000", NGRID="2000", DTHR="10.000", NORM="0.0003", nrm= "N3em4", SLOPE= "0.110", slp="ap011", DMAX="400.000", RR = 10, start=0)
 
-#os.rename(join(os.environ['ARTMOCK_DIR'], dirName), join(os.environ['PM_DIR'], dirName))
+#os.rename(join(os.environ['GLAMOCK_DIR'], dirName), join(os.environ['PM_DIR'], dirName))
