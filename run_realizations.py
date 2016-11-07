@@ -14,10 +14,10 @@ def runPMP(LBOX = "650.000", NROW = "1612", NGRID = "1612", DTHR = "120.000", NO
 	f.write("""Ngrid    = """ + NGRID  + "\n")
 	f.write("""sig8     = 0.828"""  + "\n")
 	f.write("""z_init   = 100.000"""  + "\n")
-	f.write("""step da  = 4.0000E-04"""  + "\n")
+	f.write("""step da  = 2.0000E-04"""  + "\n")
 	f.write("""z_final  = 0.000"""  + "\n")
-	f.write("""#outputs = 8"""  + "\n")
-	f.write("""2.00 1.70 1.40 1.20 1.10 1.00 0.9 0.8 0.1 0.0"""  + "\n")
+	f.write("""#outputs = 23"""  + "\n")
+	f.write("""3.2 2.61 2.19 1.87 1.62 1.41 1.24 1.09 0.97 0.86 0.76 0.67 0.59 0.51 0.45 0.39 0.33 0.28 0.23 0.18 0.14 0.10 0.00"""  + "\n")
 	f.write("""dens_thr = """ + DTHR + "\n")
 	f.write("""Vrms     = 0.000"""  + "\n")
 	f.write("""#Params  = 10"""  + "\n")
@@ -53,6 +53,6 @@ def runPMP(LBOX = "650.000", NROW = "1612", NGRID = "1612", DTHR = "120.000", NO
 	
 	return dirName
 
-dirName = runPMP(LBOX="1040.000", NROW="1300", NGRID="2600", DTHR="10.000", NORM="0.0003", nrm= "N3em4", SLOPE= "0.110", slp="ap011", DMAX="400.000", RR = 10, start=300)
+dirName = runPMP(LBOX="1000.000", NROW="2000", NGRID="2000", DTHR="10.000", NORM="0.0003", nrm= "N3em4", SLOPE= "0.110", slp="ap011", DMAX="400.000", RR = 10, start=300)
 
 #os.rename(join(os.environ['ARTMOCK_DIR'], dirName), join(os.environ['PM_DIR'], dirName))

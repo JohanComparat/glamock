@@ -21,11 +21,11 @@ character*120 :: Name
 
 
            !-----  Fill the table for things to analyze
-    iPower         = 1   !-- all particles Power spectrum 
-    iPowerRSD      = 1   !       redshift distortions for DM
-    iDensityDistr  = 1   !-- PDF for DM for different cell-sizes
-    iBias          = 1   !-- Biasing model
-    iSave          = 0   !-- Save snapshot
+    iPower          = 1   !-- all particles Power spectrum 
+    iPowerRSD    = 0   !       redshift distortions for DM
+    iDensityDistr = 1   !-- PDF for DM for different cell-sizes
+    iBias             = 0   !-- Biasing model
+    iSave            = 0   !-- Save snapshot
     
        moment = 100.*(1./AEXPN-1.) ! redshift*100.
        moment = max(moment,0)
