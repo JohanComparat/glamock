@@ -53,6 +53,6 @@ def runPMP(LBOX = "650.000", NROW = "1612", NGRID = "1612", DTHR = "120.000", NO
 	
 	return dirName
 
-dirName = runPMP(LBOX="1000.000", NROW="2000", NGRID="2000", DTHR="10.000", NORM="0.0003", nrm= "N3em4", SLOPE= "0.110", slp="ap011", DMAX="400.000", RR = 10, start=300)
+dirName = runPMP(LBOX="1000.000", NROW="2000", NGRID="2000", DTHR="10.000", NORM="0.0003", nrm= "N3em4", SLOPE= "0.110", slp="ap011", DMAX="400.000", RR = 10, start=0)
 
 #os.rename(join(os.environ['ARTMOCK_DIR'], dirName), join(os.environ['PM_DIR'], dirName))
